@@ -36,17 +36,35 @@ class ViewController: UIViewController {
         
         //Button
         var button = UIButton()
-        button.frame = CGRectMake(150, 250, 60, 60)
+        button.frame = CGRectMake(100, 250, 60, 60)
         button.setTitle("Click", forState: .Normal)
         button.setTitleColor(UIColor.blueColor(), forState: .Normal)
         self.view.addSubview(button)
         
         button.addTarget(self, action: "incrementCount", forControlEvents:
             UIControlEvents.TouchUpInside)
+        
+        //Button 2
+        
+        var button2 = UIButton()
+        button2.frame = CGRectMake(250, 250, 60, 60)
+        button2.setTitle("Down", forState: .Normal)
+        button2.setTitleColor(UIColor.redColor(), forState: .Normal)
+        self.view.addSubview(button2)
+        
+        button2.addTarget(self, action: "downCount", forControlEvents:
+            UIControlEvents.TouchUpInside)
+        
     }
     
     func incrementCount() {
         self.count++
+        self.label.text = "\(self.count)"
+        self.label2.text = "\(self.count)"
+    }
+    
+    func downCount() {
+        self.count--
         self.label.text = "\(self.count)"
         self.label2.text = "\(self.count)"
     }
