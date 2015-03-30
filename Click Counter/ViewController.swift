@@ -61,12 +61,14 @@ class ViewController: UIViewController {
         self.count++
         self.label.text = "\(self.count)"
         self.label2.text = "\(self.count)"
+        self.view.backgroundColor = UIColor.greenColor()
     }
     
     func downCount() {
         self.count--
         self.label.text = "\(self.count)"
         self.label2.text = "\(self.count)"
+        self.view.backgroundColor = UIColor.yellowColor()
     }
 }
 
